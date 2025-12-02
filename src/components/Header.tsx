@@ -11,7 +11,19 @@ export default function Header() {
     <header className="fixed top-0 w-full z-[1000] bg-white shadow-[0_2px_12px_0_rgba(196,214,222,0.25)] transition-all duration-300">
       <div className="flex items-center justify-between max-w-7xl mx-auto px-6 md:px-10 py-4">
         {/* Logo */}
-        <div className="cursor-pointer text-2xl font-bold text-gray-900">MyLogo</div>
+        <div className="cursor-pointer group inline-flex flex-col sm:flex-row items-center">
+  <div className="flex items-center text-xl sm:text-2xl md:text-3xl font-bold font-[Poppins]">
+    <span className="text-[#135fdc] group-hover:text-black transition-colors duration-300">
+      Emmanuel
+    </span>
+    <span className="text-black group-hover:text-[#135fdc] transition-colors duration-300">
+      .dev
+    </span>
+  </div>
+  {/* Optional underline effect */}
+  <div className="h-1 w-0 group-hover:w-full bg-[#135fdc] rounded transition-all duration-500 mt-1 sm:mt-0 sm:ml-2"></div>
+</div>
+
 
         {/* Desktop Nav Links */}
         <nav className="hidden md:flex items-center gap-10">

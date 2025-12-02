@@ -1,48 +1,28 @@
 "use client";
-
 import React from "react";
 import SectionHeading from "../section-heading/SectionHeading";
 import SkillsCard from "./SkillsCard";
-import { useTheme } from "../../Context/ThemeContext";
+import { useTheme } from "../../context/ThemeContext";
 
-// Placeholder icon in case your actual SVGs are missing
-const PlaceholderIcon: React.FC<React.SVGProps<SVGSVGElement>> = ({
-  className,
-  ...props
-}) => (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={className}
-    {...props}
-  >
-    <rect x="3" y="3" width="18" height="18" stroke="black" strokeWidth="2" />
-    <path d="M6 12H18" stroke="black" strokeWidth="2" />
-  </svg>
-);
-
-// Tech icons (use PlaceholderIcon for now)
-export const TypescriptIcon = (props: React.SVGProps<SVGSVGElement>) => <PlaceholderIcon {...props} />;
-export const JavascriptIcon = (props: React.SVGProps<SVGSVGElement>) => <PlaceholderIcon {...props} />;
-export const HtmlIcon = (props: React.SVGProps<SVGSVGElement>) => <PlaceholderIcon {...props} />;
-export const SassIcon = (props: React.SVGProps<SVGSVGElement>) => <PlaceholderIcon {...props} />;
-export const ReactIcon = (props: React.SVGProps<SVGSVGElement>) => <PlaceholderIcon {...props} />;
-export const ReduxIcon = (props: React.SVGProps<SVGSVGElement>) => <PlaceholderIcon {...props} />;
-export const MaterialUiIcon = (props: React.SVGProps<SVGSVGElement>) => <PlaceholderIcon {...props} />;
-export const TailwindIcon = (props: React.SVGProps<SVGSVGElement>) => <PlaceholderIcon {...props} />;
-export const BootstrapIcon = (props: React.SVGProps<SVGSVGElement>) => <PlaceholderIcon {...props} />;
-export const ElectronIcon = (props: React.SVGProps<SVGSVGElement>) => <PlaceholderIcon {...props} />;
-export const JqueryIcon = (props: React.SVGProps<SVGSVGElement>) => <PlaceholderIcon {...props} />;
-export const AntDesignIcon = (props: React.SVGProps<SVGSVGElement>) => <PlaceholderIcon {...props} />;
-export const GitIcon = (props: React.SVGProps<SVGSVGElement>) => <PlaceholderIcon {...props} />;
-export const FirebaseIcon = (props: React.SVGProps<SVGSVGElement>) => <PlaceholderIcon {...props} />;
-export const FigmaIcon = (props: React.SVGProps<SVGSVGElement>) => <PlaceholderIcon {...props} />;
-export const NetlifyIcon = (props: React.SVGProps<SVGSVGElement>) => <PlaceholderIcon {...props} />;
-export const VercelIcon = (props: React.SVGProps<SVGSVGElement>) => <PlaceholderIcon {...props} />;
-export const WebpackIcon = (props: React.SVGProps<SVGSVGElement>) => <PlaceholderIcon {...props} />;
+import { 
+  SiTypescript, 
+  SiJavascript, 
+  SiHtml5, 
+  SiSass, 
+  SiReact, 
+  SiRedux, 
+  SiTailwindcss, 
+  SiBootstrap, 
+  SiElectron, 
+  SiJquery, 
+  SiAntdesign, 
+  SiGit, 
+  SiFirebase, 
+  SiFigma, 
+  SiNetlify, 
+  SiVercel, 
+  SiWebpack 
+} from "react-icons/si";
 
 // Skill type
 type Skill = { name: string; icon: React.ReactNode };
@@ -51,30 +31,29 @@ const Skills: React.FC = () => {
   const { isDark } = useTheme();
 
   const programmingSkills: Skill[] = [
-    { name: "Typescript", icon: <TypescriptIcon /> },
-    { name: "Javascript", icon: <JavascriptIcon /> },
-    { name: "HTML", icon: <HtmlIcon /> },
-    { name: "Sass", icon: <SassIcon /> },
+    { name: "Typescript", icon: <SiTypescript className="w-6 h-6" color="#3178C6" /> },
+    { name: "Javascript", icon: <SiJavascript className="w-6 h-6" color="#F7DF1E" /> },
+    { name: "HTML", icon: <SiHtml5 className="w-6 h-6" color="#E34F26" /> },
+    { name: "Sass", icon: <SiSass className="w-6 h-6" color="#CC6699" /> },
   ];
 
   const libraryFrameworks: Skill[] = [
-    { name: "React", icon: <ReactIcon /> },
-    { name: "Redux", icon: <ReduxIcon /> },
-    { name: "Material UI", icon: <MaterialUiIcon /> },
-    { name: "Tailwind CSS", icon: <TailwindIcon /> },
-    { name: "Bootstrap", icon: <BootstrapIcon /> },
-    { name: "Electron", icon: <ElectronIcon /> },
-    { name: "jQuery", icon: <JqueryIcon /> },
-    { name: "Ant Design", icon: <AntDesignIcon /> },
+    { name: "React", icon: <SiReact className="w-6 h-6" color="#61DAFB" /> },
+    { name: "Redux", icon: <SiRedux className="w-6 h-6" color="#764ABC" /> },
+    { name: "Tailwind CSS", icon: <SiTailwindcss className="w-6 h-6" color="#06B6D4" /> },
+    { name: "Bootstrap", icon: <SiBootstrap className="w-6 h-6" color="#7952B3" /> },
+    { name: "Electron", icon: <SiElectron className="w-6 h-6" color="#47848F" /> },
+    { name: "jQuery", icon: <SiJquery className="w-6 h-6" color="#0769AD" /> },
+    { name: "Ant Design", icon: <SiAntdesign className="w-6 h-6" color="#0170FE" /> },
   ];
 
   const toolsSkills: Skill[] = [
-    { name: "Git", icon: <GitIcon /> },
-    { name: "Firebase", icon: <FirebaseIcon /> },
-    { name: "Figma", icon: <FigmaIcon /> },
-    { name: "Netlify", icon: <NetlifyIcon /> },
-    { name: "Vercel", icon: <VercelIcon /> },
-    { name: "Webpack", icon: <WebpackIcon /> },
+    { name: "Git", icon: <SiGit className="w-6 h-6" color="#F05032" /> },
+    { name: "Firebase", icon: <SiFirebase className="w-6 h-6" color="#FFCA28" /> },
+    { name: "Figma", icon: <SiFigma className="w-6 h-6" color="#F24E1E" /> },
+    { name: "Netlify", icon: <SiNetlify className="w-6 h-6" color="#00C7B7" /> },
+    { name: "Vercel", icon: <SiVercel className="w-6 h-6" color="#000000" /> },
+    { name: "Webpack", icon: <SiWebpack className="w-6 h-6" color="#8DD6F9" /> },
   ];
 
   return (

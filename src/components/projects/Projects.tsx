@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import ProjectCard from "../projectcard/ProjectCard";
+import ProjectCard from "../ProjectCard/ProjectCard";
 import SectionHeading from "../section-heading/SectionHeading";
 
 export interface Project {

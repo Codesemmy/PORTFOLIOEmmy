@@ -2,16 +2,11 @@
 
 import React from "react";
 import { useRouter } from "next/navigation";
-
-import { useTheme } from "@/Context/ThemeContext";
+import { useTheme } from "@/context/ThemeContext";
 import AnimatedText from "@/components/animatedText/AnimatedText";
-import Socials from "@/components/socials/Socials";
-import {
-  GoldRects,
-  GreenRects,
-  PinkRects,
-  PurpleRects,
-} from "@/assets/icons/icons";
+
+// Import social icons from react-icons
+import { SiGithub, SiInstagram, SiLinkedin, SiTiktok } from "react-icons/si";
 
 const Contact: React.FC = () => {
   const { isDark } = useTheme();
@@ -58,20 +53,43 @@ const Contact: React.FC = () => {
       </button>
 
       {/* Social Links */}
-      <Socials />
+      <div className="flex gap-6 mb-8">
+        <a
+          href="https://github.com/yourprofile"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
+          <SiGithub
+  size={30}
+  className="text-gray-900 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+/>
 
-      {/* Decorative Rectangles */}
-      <div className="absolute top-16 sm:top-16 left-10 sm:left-40 md:left-64">
-        <PurpleRects />
-      </div>
-      <div className="absolute top-16 sm:top-16 right-10 sm:right-40 md:right-64">
-        <GreenRects />
-      </div>
-      <div className="absolute top-64 md:top-48 left-20 md:left-[500px]">
-        <GoldRects />
-      </div>
-      <div className="absolute top-64 md:top-48 right-20 md:right-[500px]">
-        <PinkRects />
+        </a>
+        <a
+          href="https://instagram.com/yourprofile"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+          <SiInstagram size={30} className="text-pink-500 hover:text-pink-600 transition-colors" />
+        </a>
+        <a
+          href="https://linkedin.com/in/yourprofile"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+          <SiLinkedin size={30} className="text-blue-700 hover:text-blue-800 transition-colors" />
+        </a>
+        <a
+          href="https://tiktok.com/@yourprofile"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="TikTok"
+        >
+          <SiTiktok size={30} className="text-black hover:text-gray-800 transition-colors" />
+        </a>
       </div>
     </div>
   );

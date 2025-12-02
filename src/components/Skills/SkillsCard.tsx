@@ -8,10 +8,14 @@ interface SkillsCardProps {
 const SkillsCard: React.FC<SkillsCardProps> = ({ icon, name }) => {
   return (
     <div className="flex items-center gap-2">
-      <div className="text-xl">{icon}</div>
+      {/* Responsive icon container */}
+      <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8">
+        {icon}
+      </div>
+
       <AnimatedText
         text={name}
-        className="text-base font-medium"
+        className="text-sm sm:text-base md:text-lg font-medium"
         once
         duration={0}
         staggerValue={0.02}

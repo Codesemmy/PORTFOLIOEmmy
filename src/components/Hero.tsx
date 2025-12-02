@@ -51,11 +51,12 @@ export default function Hero() {
             transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
           >
             <img
-              src="/newporfoliopics.jpg"
-              alt="Profile"
-              draggable={false}
-              className="w-full h-full object-cover rounded-full"
-            />
+  src="https://res.cloudinary.com/dbntcnbpv/image/upload/e_background_removal/b_rgb:135FDC/f_png/v1764674964/newporfoliopics_ajntdf.jpg"
+  alt="Profile"
+  draggable={false}
+  className="w-full h-full object-cover rounded-full"
+/>
+
           </motion.div>
         </div>
       </div>
